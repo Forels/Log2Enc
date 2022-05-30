@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "progetto-tesi-328415",
+  "private_key_id": "48a94a7d816a5b83f0ba4c0ad92bc45e5890a068",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDQF8NVpjRcEJG3\nXDTAvbyqfiBxczXz7YlamB9Hj2ftcALxWPL+wEwRU3u7CaKEprSla+Bx1t6hBHj7\nVIlyclAalqFKkB0ythUzEG/bHvzGYJYjdqAIjXi4TVmd7mc+Rl4tLcisSJ+a3b6Y\n0d0cCVk3sQhWzohiq7SJXuauUmSYDqsKY1IIzS8AG38zo0lvgtsTLwbwbRaWEKWy\nTnq6p44MDG6LpJ2pqV1b1vvO08Uv6etg8jrveLBNGFRgnKiR7WTOkFLsYRGb2PJy\nOgb6cxBjkXnEk0AZrkYACwRjpVgbos5doJJ+eTK/8GbLkxQ0kBKdUBnyqr8zX/+D\nEyVqQ5iNAgMBAAECggEAZgBn7ulf/ArhKoSHlTzMKLRXedT0CuQSMnajyoOIeXIw\n9xXXUrl27/1Ahr+jyqsenIGDDLo6+amEFgprr05KZqYUXMTEkzF+tb+mXL3VQPZi\nUfLZYifal1jPB2Ovdu6uRi4NkimtFpAAV89zN0V71pkwEcD+SIOLJNUAdU2M4p1W\nquyj63vpaedreVBAywqPSFRR5uePjIy/YWJ3m1I34b6hEGtRh+rqHsJqGaiG+D0W\nZtnmlCDAkx4RYZKaPMq8wzR8KXyUfbyG2X8ad4MMWNKRtoxH9Y2K33XwmZi62wSp\negj9I9npBzU63+KI/mM71GYoapSjGFQg1f8q1GE33wKBgQD+ooBzlQj3Z2UMZW04\n9JBemLWzJW+pYq/BvwsxYWWLxqCu+qnUSKkyjvPb2YqXUK81+x2oJCt8nk1Yr5Rs\nrfYyMtDrGzQxHYVfazCoLcbA2orGbPgVAimbxjtlOPeRXOfh6jvuz/Or68LcmRZs\nQIWQt34Fk9FKusVo/gxNhPiDnwKBgQDRNWFXloI2/ADzmkBkLyrO+3ii2wQRsBdE\n+MI4ggREeEyB49B1r8dR70f3MzxeNbVasvrTPTtOTuin3lgQm5RWf0nWBUNBCQrp\njwMPJP1G3K5ug1gQuk8Q6g4I0Lz0JHZUnrFkMKWcXjoK4zpf+lnF9boSCaT+YPti\n0+dhD8eUUwKBgEhLfOrUApKzoWXumh8UmLSy6MuvMk/GPB5nDld7zqfrwg1MD9G8\nu4UmPyhJUGb7unM6E8Z8VnhwPYeTejGNBpxj/xrxQ1U6i3Z26X6mWIrCwanqoFje\nn0+h7ZUkom18Ej37Ef8QvZ8vNckKEeq0OvfGkRomSMLN2mSf1IBh42kDAoGAZ7MC\n9ix3jROq0RUDl+U9Xe2OZYMUaEQVtK1tcB8aSGos2jF3Me6YaQenb2PpJ3WN2FBh\nPfXbALziW9s9YbYMeDeN/NUM+h6mVxD5XjdiiA55M/RM4bXH3UV3AW2eS5ILSXSD\nz3rBjFm0gZMSa2KnvxVHTwuSyjh+QwVwak8tCVsCgYAJ5vkS5yLv/YGcbO0tfGpj\nyokyiY0OoNQvPE9GrdOSwWBUvjOgYRtuwpt2J//aMEwNa399BrXFOiCm1/TXYKSa\nQvJSbqxwTARRmOxsQZtiWU+FeEZbsU/jd/xclm3a4Cho7gDXUbsqjqDzpq+tBjrv\nFSrI2Pqg3LnuX19nz0qTtw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "gionata@progetto-tesi-328415.iam.gserviceaccount.com",
+  "client_id": "118194480437848650617",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gionata%40progetto-tesi-328415.iam.gserviceaccount.com"
+}
