@@ -56,7 +56,6 @@ def word2vec_cbow(datafile, df, dimension, word_aggregation):
     model = train_text_model(model, traces)      
        
     # calculating the average feature vector for each sentence (trace)
-        
     vectors_average, vectors_max = average_feature_vector(model, traces)
         
     end_time = time.time() - start_time

@@ -29,8 +29,12 @@ def schemepage(email:str, usage_num:int, dimension:int, word_aggregation:str, gr
 
     scheme = pd.read_csv(f'./meta_features_extracted/{email}_{usage_num}.csv')
 
+    st.write("""We computed our measures using the [ECoL](https://github.com/lpfgarcia/ECoL) (Extended Complexity Library) R package. 
+                This implementation characterize the complexity of classification and regression problems based on aspects that quantify the linearity of the data, 
+                the presence of informative feature, the sparsity and dimensionality of the datasets.
+    """)
+
     #csv visualization and explaining
-    st.header("Test")
     column1, column2 = st.columns([6,1])
     with column1: 
         st.dataframe(scheme)
@@ -143,6 +147,10 @@ def schemepage(email:str, usage_num:int, dimension:int, word_aggregation:str, gr
 
     if data != []:
         st.subheader("Data")
+        st.write("""These measurements indicate the computational demands of each algorithm, 
+                    as they indicate the time taken and the size occupied.
+                    They also indicate the size of the resulting vector, previously chosen.
+        """)
 
     if 'Encoding time' in data:
         # create the plot
@@ -173,6 +181,13 @@ def schemepage(email:str, usage_num:int, dimension:int, word_aggregation:str, gr
 
     if data_selection_net != []:
         st.subheader("Measures of network")
+        st.write("""
+            The network measures represent the dataset as a graph and extract structural information from it.
+            1. **Density**: Average Density of the network (Density) represents the number of edges in the graph, 
+                divided by the maximum number of edges between pairs of data points;
+            2. **Clustering Coefficient**: averages the clustering tendency of the vertexes 
+                by the ratio of existent edges between its neighbors and the total number of edges that could possibly exist between them;
+            """)
 
     if 'Density' in data_selection_net:
         # create the plot
@@ -209,6 +224,14 @@ def schemepage(email:str, usage_num:int, dimension:int, word_aggregation:str, gr
 
     if data_selection_c != []:
         st.subheader("Measures of class balance")
+        st.write("""
+            These measures capture the differences in the number of examples per class in the dataset. 
+            When these differences are severe, problems related to generalization of the ML classification techniques could happen 
+            because of the imbalance ratio.
+            1. **C1**: The entropy of class proportions (C1) capture the imbalance in a dataset based on the proportions of examples per class;
+            2. **C2**: The imbalance ratio (C2) is an index computed for measuring class balance. 
+                        This is a version of the measure that is also suited for multiclass classification problems;
+        """)
 
     if 'c1' in data_selection_c:
         # create the plot
@@ -247,6 +270,22 @@ def schemepage(email:str, usage_num:int, dimension:int, word_aggregation:str, gr
 
     if data_selection_f != []:
         st.subheader("Measures of overlapping")
+        st.write('''
+            The overlapping measures evaluate how informative the available features are to separate the classes. 
+            If there is at least one very discriminative feature in the dataset, 
+            the problem can be considered simpler than if there is no such an attribute.
+            
+            1. **F1**: Maximum Fisher’s Discriminant Ratio (F1) measures the overlap between the values of the features 
+                and takes the value of the largest discriminant ratio among all the available features.
+            2. **F1v**: Directional-vector maximum Fisher’s discriminant ratio (F1v) complements F1 by searching for a vector able to separate two classes after the training examples have been projected into it.
+            3. **F2**: Volume of the overlapping region (F2) computes the overlap of the distributions of the fea- tures values within the classes. 
+                F2 can be determined by finding, for each feature its minimum and maximum values in the classes.
+            4. **F3**: The maximum individual feature efficiency (F3) of each feature is given by the ratio between the number of examples that are not in the overlapping region of two classes and the total number of examples. 
+                This measure returns the maximum of the values found among the input features.
+            5. **F4**: Collective feature efficiency (F4) get an overview on how various features may work together in data separation. 
+                First the most discriminative feature according to F3 is selected and all examples that can be separated by this feature are removed from the dataset. The previous step is repeated on the remaining dataset until all the features have been considered or no example remains. F4 returns the ratio of examples that have been discriminated.
+
+        ''')
 
     if 'f1.mean' in data_selection_f:
         # create layer
@@ -358,6 +397,10 @@ def schemepage(email:str, usage_num:int, dimension:int, word_aggregation:str, gr
     
     if data_selection_l != []:
         st.subheader("Measures of linearity")
+        st.write('''
+            The linearity measures try to quantify if it is possible to separate the labels by a hyperplane or linear function. 
+            The underlying assumption is that a linearly separable problem can be considered simpler than a problem requiring a non-linear decision boundary.
+        ''')
 
     if 'l1.mean' in data_selection_l:
         # create layer
@@ -415,6 +458,20 @@ def schemepage(email:str, usage_num:int, dimension:int, word_aggregation:str, gr
 
     if data_selection_n != []:
         st.subheader("Measures of neighborhood")
+        st.write('''
+            The Neighborhood measures analyze the neighborhoods of the data items and try to capture class overlapping and the shape of the decision boundary. 
+            They work over a distance matrix storing the distances between all pairs of data points in the dataset.
+
+            1. **N1**: Fraction of borderline points (N1) computes the percentage of vertexes incident to edges connecting examples of opposite classes in a Minimum Spanning Tree (MST).
+            2. **N2**: Ratio of intra/extra class nearest neighbor distance (N2) computes the ratio of two sums: intra-class and inter-class. 
+                The former corresponds to the sum of the distances between each example and its closest neighbor from the same class. 
+                The later is the sum of the distances between each example and its closest neighbor from another class (nearest enemy).
+            3. **N3**: Error rate of the nearest neighbor (N3) classifier corresponds to the error rate of a one Nearest Neighbor (1NN) classifier, 
+                estimated using a leave-one-out procedure in dataset.
+            4. **LSC**: Local Set Average Cardinality (LSC) is based on Local Set (LS) and defined as the set of points 
+                from the dataset whose distance of each example is smaller than the distance from the exemples of the different class. 
+                LSC is the average of the LS.
+        ''')
 
     if 'n1' in data_selection_n:
         # create the plot
@@ -469,6 +526,15 @@ def schemepage(email:str, usage_num:int, dimension:int, word_aggregation:str, gr
 
     if data_selection_t != []:
         st.subheader("Measures of dimensionality")
+        st.write('''
+            These measures give an indicative of data sparsity. 
+            They capture how sparse a datasets tend to have regions of low density. 
+            These regions are know to be more difficult to extract good classification and regression models.
+            1. **T2**: Average number of points per dimension (T2) is given by the ratio between the number of examples and dimensionality of the dataset.
+            2. **T3**: Average number of points per PCA (T3) is similar to T2, 
+                but uses the number of PCA com- ponents needed to represent 95 variability as the base of data sparsity assessment.
+            3. **T4**: Ratio of the PCA Dimension to the Original (T4) estimates the proportion of relevant and the original dimensions for a dataset.
+        ''')
 
     if 't1.mean' in data_selection_t:
        # create layer
@@ -530,4 +596,3 @@ def schemepage(email:str, usage_num:int, dimension:int, word_aggregation:str, gr
         with col2:
             # show plot on streamlit on column
             t4_chart = st.altair_chart(t4_plot, use_container_width=True)
-
